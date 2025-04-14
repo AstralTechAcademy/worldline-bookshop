@@ -1,34 +1,65 @@
-# Astro Starter Kit: Basics
+# Create project
 
 ```sh
-npm create astro@latest -- --template basics
+npm create astro@latest
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+# Add aditional tools
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Add tailwind css
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+npx astro add tailwind
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## NodeJS adapter
+
+
+```sh
+npx astro add node
+```
+
+After run the above commands, your file astro.config.mjs must contains
+
+```js
+// @ts-check
+import { defineConfig } from 'astro/config';
+
+import node from '@astrojs/node';
+
+import tailwindcss from '@tailwindcss/vite';
+
+// https://astro.build/config
+export default defineConfig({
+  adapter: node({
+    mode: 'standalone'
+  }),
+
+  vite: {
+    plugins: [tailwindcss()]
+  }
+});
+```
+
+# Writing code
+
+## Layout
+
+Layouts are Astro components used to provide a reusable UI structure, such as a page template.
+
+We conventionally use the term “layout” for Astro components that provide common UI elements shared across pages such as headers, navigation bars, and footers. 
+
+A typical Astro layout component provides Astro, Markdown or MDX pages with:
+
+a page shell (<html>, <head> and <body> tags)
+a <slot /> to specify where individual page content should be injected.
+
+## Header Component
+
+## Body
+
+>[!WARNING]
+TODO
 
 ## 🧞 Commands
 
@@ -42,7 +73,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
