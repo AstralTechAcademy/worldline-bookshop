@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Book from '../components/Book.astro';
-import GenericBook from '../components/GenericBook.astro';
 
 const books = await fetch('https://europe-west9-astraltech.cloudfunctions.net/foo').then((response) => response.json());
 ---
