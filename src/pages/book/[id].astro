@@ -3,38 +3,40 @@ import Layout from '../../layouts/Layout.astro';
 
 const { id } = Astro.params;
 
-//const book = await fetch('https://europe-west9-astraltech.cloudfunctions.net/book?isbn=${id}').then((response) => response.json());
+const book = await fetch('https://book-967097485204.europe-southwest1.run.app?isbn=' + id).then((response) => response.json());
 
-const title = "Por si un día volvemos"
-const description = "Maria Dueñas"
-const img = "https://imagessl2.casadellibro.com/a/l/s7/92/9788408299592.webp"
-
-
+const title = book[0].title
+const author = book[0].author
+const img = book[0].img
 ---
 <Layout >
 
-
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="w-200 flex flex-row p-5 ml-20 mt-10">
-<img src={img} class="w-50 h-80">
-<div class="flex flex-col p-5">
-    <p> ISBN {id}</p>
-    <p class="mt-5">{title}</p>
-    <p>{description}</p>
-    <p class="line-through text-gray-600">24,90 €</p>
-
-    <div class="flex flex-row items-center ">
-      <p class="text-2xl text-red-600">20,00 €</p>
-      <i class="ml-3 fa fa-star text-yellow-400"></i>
-      <i class="ml-1 fa fa-star text-yellow-400"></i>
-      <i class="ml-1 fa fa-star text-yellow-400"></i>
-      <i class="ml-1 fa fa-star text-yellow-400"></i>
-      <i class="ml-1 fa fa-star text-yellow-400"></i>
+<div class="w-280 flex flex-row p-5 ml-20 mt-10">
+    <img src={img} class="w-50 h-80">
+    <div class="flex flex-col p-5">
+        <h2>Sinopsis</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
     </div>
-    
-    <p class="mt-5 text-xl text-[#45BEAA]">¡Free shipping! </p>
-</div>
+    <div class="flex flex-col p-5">
+        <p> ISBN {id}</p>
+        <p class="mt-5">{title}</p>
+        <p>{author}</p>
+        <p class="line-through text-gray-600">24,90 €</p>
+
+        <div class="flex flex-row items-center w-50">
+        <p class="text-2xl text-red-600">20,00 €</p>
+        <i class="ml-3 fa fa-star text-yellow-400"></i>
+        <i class="ml-1 fa fa-star text-yellow-400"></i>
+        <i class="ml-1 fa fa-star text-yellow-400"></i>
+        <i class="ml-1 fa fa-star text-yellow-400"></i>
+        <i class="ml-1 fa fa-star text-yellow-400"></i>
+        </div>
+
+        <button class="mt-5 bg-[#45BEAA] p-2 w-40 hover:bg-[#FFEB78] rounded-xl ">Add to cart</button>
+        
+        <p class="mt-5 text-xl text-[#45BEAA]">¡Free shipping! </p>
+    </div>
 </div>
 </Layout >

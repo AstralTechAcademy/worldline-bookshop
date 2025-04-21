@@ -1,11 +1,14 @@
 ---
-const {title, description, img} = Astro.props
+const {title, description, img, isbn} = Astro.props
+
+const ref = "/book/" + isbn
 
 ---
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="w-80 flex flex-col p-5 border-3 border-[#45BEAA]">
-  <a href="/book/100">
+<!--<div class="w-80 flex flex-col p-5 border-3 border-[#45BEAA] hover:bg-[#A0DCD2]">-->
+<div class="w-80 flex flex-col p-5 hover:bg-[#A0DCD2] ">
+  <a href={ref}>
     <img src={img} class="w-50 h-80">
     <p class="mt-5">{title}</p>
     <p>{description}</p>

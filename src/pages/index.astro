@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Book from '../components/Book.astro';
+import GenericBook from '../components/GenericBook.astro';
 
 const books = await fetch('https://europe-west9-astraltech.cloudfunctions.net/foo').then((response) => response.json());
 ---
@@ -10,7 +11,7 @@ const books = await fetch('https://europe-west9-astraltech.cloudfunctions.net/fo
 
 	<div class="flex justify-center relative items-center">
 		<div class="mt-20 grid grid-cols-3 gap-5  ">
-			{books.map((data) => <Book title={data.title} description={data.author} img={data.img}></Book>)}
+			{books.map((data) => <Book title={data.title} description={data.author} img={data.img} isbn={data.isbn}></Book>)}
 		</div>
 	</div>
 </Layout>
