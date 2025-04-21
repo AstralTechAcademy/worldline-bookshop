@@ -1,9 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Book from '../components/Book.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const books = await fetch('https://europe-west9-astraltech.cloudfunctions.net/foo').then((response) => response.json());
 ---
 
 <Layout>
+	<h1 class="flex items-center justify-center relative top-15 text-2xl font-bold  text-[#45BEAA]">Our Bestsellers</h1>
+
+	<div class="flex justify-center relative items-center">
+		<div class="mt-20 grid grid-cols-3 gap-5  ">
+			{books.map((data) => <Book title={data.title} description={data.author} img={data.img}></Book>)}
+		</div>
+	</div>
 </Layout>

@@ -1,0 +1,27 @@
+---
+const {title, description, img} = Astro.props
+
+---
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="w-80 flex flex-col p-5 border-3 border-[#45BEAA]">
+  <a href="/book/100">
+    <img src={img} class="w-50 h-80">
+    <p class="mt-5">{title}</p>
+    <p>{description}</p>
+    <p class="line-through text-gray-600">24,90 €</p>
+
+    <div class="flex flex-row  items-center ">
+      <p class="text-2xl text-red-600">20,00 €</p>
+      <i class="ml-3 fa fa-star text-yellow-400"></i>
+      <i class="ml-1 fa fa-star text-yellow-400"></i>
+      <i class="ml-1 fa fa-star text-yellow-400"></i>
+      <i class="ml-1 fa fa-star text-yellow-400"></i>
+      <i class="ml-1 fa fa-star text-yellow-400"></i>
+
+
+    </div>
+    
+    <p class="mt-5 text-xl text-[#45BEAA]">¡Free shipping! </p>
+  </a>
+</div>
