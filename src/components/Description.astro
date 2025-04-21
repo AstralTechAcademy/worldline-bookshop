@@ -1,0 +1,11 @@
+---
+
+const { id } = Astro.params;
+
+const data = await fetch('https://description-967097485204.europe-southwest1.run.app?isbn=' + id).then((response) => response.json());
+
+const description = data.description
+
+---
+
+<p>{description}</p>
