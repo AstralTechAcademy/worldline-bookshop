@@ -1,0 +1,14 @@
+[
+    {"title": "Fluent Python: Clear, Concise, and Effective Programming", "pages": "1012", "author": "Luciano Ramalho", "isbn": "978-1492056355", "price": "40,00 €", "img": "https://m.media-amazon.com/images/I/81OvszBEdhL._SY385_.jpg"},
+    {"title": "Modern Full-Stack React Projects: Build, maintain, and deploy modern web apps using MongoDB, Express, React, and Node.js", "pages": "506", "author": "Daniel Bugl", "isbn": "978-1837637959", "price": "34,00 €", "img": "https://m.media-amazon.com/images/I/71N2jNvJ7LL._SY385_.jpg"},
+    {"title": "iOS Application Development: The Ultimate Step-by-Step Guide to Building Modern Apps with UIKit & SwiftUI", "pages": "444", "author": "Maxime Lane", "isbn": "979-8309920556", "price": "30,00 €", "img": "https://m.media-amazon.com/images/I/61zWgrE2ZBL._SY425_.jpg"},
+    {"title": "Clean Code: A Handbook of Agile Software Craftsmanship", "pages": "230", "author": "Robert Martin", "isbn": "978-0132350884", "price": "39,00 €", "img": "https://m.media-amazon.com/images/I/51E2055ZGUL._SY425_.jpg"},
+    {"title": "Kotlin Design Patterns and Best Practices", "pages": "402", "author": "Alexey Soshin", "isbn": "978-1805127765", "price": "33,00 €", "img": "https://m.media-amazon.com/images/I/71JQ0w5FT-L._SY385_.jpg"},
+    {"title": "AgilePM: Agile Project Management: Handbook v2", "pages": "247", "author": "Andrew Craddock", "isbn": "979-8338956106", "price": "19,00 €", "img": "https://m.media-amazon.com/images/I/51af2zo4C4L._SY385_.jpg"},
+    {"title": "4 Essential Keys to Effective Communication in Love, Life, Work--Anywhere!", "pages": "131", "author": "Bento C. Leal III", "isbn": "978-1546581734", "price": "10,00 €", "img": "https://m.media-amazon.com/images/I/715Vbs49+1L._SY466_.jpg"},
+    {"title": "Organizing Your Day: 40 Time Management Hacks To Be More Productive", "pages": "25", "author": "Rick Riley", "isbn": "978-1835080555", "price": "10,00 €", "img": "https://m.media-amazon.com/images/I/81Co8z5MP4L._SY522_.jpg"},
+    {"title": "Modern C++ Programming Cookbook. C++23", "pages": "", "author": "Marius Bancila", "isbn": "978-1835080542", "price": "42,00 €", "img": "https://m.media-amazon.com/images/I/71dFyL4aF9L._SY385_.jpg"},
+    {"title": "Tour of C++, A (C++ In-Depth Series)", "pages": "320", "author": "Bjarne Stroustrup", "isbn": "978-0136816485", "price": "21,00 €", "img": "https://m.media-amazon.com/images/I/71IvxSNVoaL._SY385_.jpg"},
+    {"title": "How to Talk to Anyone", "pages": "338", "author": "Leil Lowdnes", "isbn": "978-0722538074", "price": "7,00 €", "img": "https://m.media-amazon.com/images/I/61B0Z0Buu6L._SY466_.jpg"},
+    {"title": "The 7 Habits Of Highly Effective People", "pages": "464", "author": "Stephen R. Covey", "isbn": "978-1471195204", "price": "14,00 €", "img": "https://m.media-amazon.com/images/I/61tpl0kISoL._SY466_.jpg"}
+]
