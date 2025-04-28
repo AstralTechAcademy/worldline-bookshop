@@ -1,6 +1,18 @@
 ---
-const {title, description, img, isbn} = Astro.props
 
+interface Props {
+  title: string;
+  description: string;
+  img: string;
+  isbn: string;
+  price: number;
+}
+
+const {title, description, img, isbn, price} = Astro.props
+
+const b: number = 3;
+const a = parseFloat(price).toFixed(2);
+const priceDiscount = parseFloat(a - b).toFixed(2);
 const ref = "/book/" + isbn
 
 ---
@@ -12,10 +24,10 @@ const ref = "/book/" + isbn
     <img src={img} class="w-50 h-80">
     <p class="mt-5">{title}</p>
     <p>{description}</p>
-    <p class="line-through text-gray-600">24,90 €</p>
+    <p class="line-through text-gray-600">{price} €</p>
 
     <div class="flex flex-row  items-center ">
-      <p class="text-2xl text-red-600">20,00 €</p>
+      <p class="text-2xl text-red-600">{priceDiscount} €</p>
       <i class="ml-3 fa fa-star text-yellow-400"></i>
       <i class="ml-1 fa fa-star text-yellow-400"></i>
       <i class="ml-1 fa fa-star text-yellow-400"></i>

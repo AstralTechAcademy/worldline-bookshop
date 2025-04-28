@@ -10,7 +10,7 @@ const books = await fetch('https://europe-west9-astraltech.cloudfunctions.net/fo
 
 	<div class="flex justify-center relative items-center">
 		<div class="mt-20 grid grid-cols-3 gap-5  ">
-			{books.map((data) => <Book title={data.title} description={data.author} img={data.img} isbn={data.isbn}></Book>)}
+			{books.map((data) => <Book title={data.title} description={data.author} img={data.img} isbn={data.isbn} price={data.price}></Book>)}
 		</div>
 	</div>
 </Layout>

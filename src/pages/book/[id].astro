@@ -11,6 +11,8 @@ const book = await fetch('https://book-967097485204.europe-southwest1.run.app?is
 const title = book[0].title
 const author = book[0].author
 const img = book[0].img
+const price = parseFloat(book[0].price).toFixed(2)
+const priceDiscount = parseFloat(price - 3).toFixed(2);
 ---
 <Layout >
 
@@ -28,10 +30,10 @@ const img = book[0].img
         <p> ISBN {id}</p>
         <p class="mt-5">{title}</p>
         <p>{author}</p>
-        <p class="line-through text-gray-600">24,90 €</p>
+        <p class="line-through text-gray-600">{price} €</p>
 
         <div class="flex flex-row items-center w-50">
-        <p class="text-2xl text-red-600">20,00 €</p>
+        <p class="text-2xl text-red-600">{priceDiscount} €</p>
         <i class="ml-3 fa fa-star text-yellow-400"></i>
         <i class="ml-1 fa fa-star text-yellow-400"></i>
         <i class="ml-1 fa fa-star text-yellow-400"></i>
