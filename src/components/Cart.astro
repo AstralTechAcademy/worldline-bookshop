@@ -1,16 +1,12 @@
 ---
-import { getCartCount } from '../cart.js';
-let cartCount = getCartCount();
 ---
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<i class="fa fa-shopping-cart"><span id="cart-count" class="ml-3">{cartCount}</span></i>
+<i class="fa fa-shopping-cart"><span id="cart-count" class="ml-3">0</span></i>
 
 
 <script>
     import { getCartCount } from '../cart.js';
-
-    let cartCount = getCartCount();
 
     let span = document.getElementById('cart-count');
     
