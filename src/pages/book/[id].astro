@@ -3,7 +3,6 @@ import Layout from '../../layouts/Layout.astro';
 import Description from '../../components/Description.astro';
 import GenericDescription from '../../components/GenericDescription.astro';
 
-
 const { id } = Astro.params;
 
 const book = await fetch('https://book-967097485204.europe-southwest1.run.app?isbn=' + id).then((response) => response.json());
@@ -13,7 +12,9 @@ const author = book[0].author
 const img = book[0].img
 const price = parseFloat(book[0].price).toFixed(2)
 const priceDiscount = parseFloat(price - 3).toFixed(2);
+
 ---
+
 <Layout >
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -41,9 +42,17 @@ const priceDiscount = parseFloat(price - 3).toFixed(2);
         <i class="ml-1 fa fa-star text-yellow-400"></i>
         </div>
 
-        <button class="mt-5 bg-[#45BEAA] p-2 w-40 hover:bg-[#FFEB78] rounded-xl ">Add to cart</button>
+        <button id="add-cart" class="mt-5 bg-[#45BEAA] p-2 w-40 hover:bg-[#FFEB78] rounded-xl ">Add to cart</button>
         
         <p class="mt-5 text-xl text-[#45BEAA]">¡Free shipping! </p>
     </div>
 </div>
+
+<script>     
+    import { addToCart } from '../../cart';
+
+    document.getElementById('add-cart')?.addEventListener('click', () => {
+        addToCart()
+  });
+</script>
 </Layout >
