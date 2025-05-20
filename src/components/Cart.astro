@@ -5,7 +5,7 @@
 
 <div class="flex flex-col"></div>
     <i class="fa fa-shopping-cart">
-        <span id="cart-count" class="ml-3">0</span>
+        <span id="cart-count" class="ml-3"></span>
     </i>
 
     <button id="buy" class="bg-[#45BEAA] hover:bg-[#FFEB78] text-black py-2 px-4 rounded-xl">
@@ -19,14 +19,13 @@
     import { getCartCount } from '../cart.js';
 
     let span = document.getElementById('cart-count');
-    let price = document.getElementById('price-discount');
-    let amount = price?.textContent?.split(' ')[0].replace('.', '')
     
     document.addEventListener('cartUpdated', () => {
         if (span != null) span.textContent = getCartCount().toString();
     });
 
     document.getElementById('buy')?.addEventListener('click', async () => {
+        let amount = document.getElementById('cart-count')?.textContent?.split(' ')[0].replace('.', '')
         const redirect_url = await fetch('https://createhostedcheckout-967097485204.europe-southwest1.run.app?amount=' + amount).then((response) => response.text());
         window.location.href = redirect_url
     });

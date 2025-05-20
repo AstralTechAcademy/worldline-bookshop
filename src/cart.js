@@ -1,8 +1,8 @@
-let cartCount = 0;
+let cartCount = Number(0);
 
 export const addToCart = (amount) => {
     //cartCount++;
-    cartCount += amount
+    cartCount += Number(amount)
     console.log(cartCount)
     document.dispatchEvent(new Event('cartUpdated')); // Dispara un evento para que los componentes escuchen los cambios
 }
