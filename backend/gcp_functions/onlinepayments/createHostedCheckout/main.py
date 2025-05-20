@@ -26,8 +26,8 @@ def main(request):
         'Access-Control-Allow-Origin': origin
     }
 
-    yourAPIkey = ""
-    yourAPISecret = ""
+    yourAPIkey = "E0D81E43845F3FE48B53"
+    yourAPISecret = "6583537EA232B25948D805F0C0209586183F2BF9FB31FB7DAC55EC27B7A995A261527C3D926240FCA36D2A26FFEFD129D6DCB06977A938C4306E4A1B828016A8"
     yourCompanyName = "Worldline Bookshop"
 
     # Create a URI for our TEST/LIVE environment
@@ -61,7 +61,7 @@ def main(request):
     order.amount_of_money = amountOfMoney
 
     hostedCheckoutSpecificInput = HostedCheckoutSpecificInput()
-    hostedCheckoutSpecificInput.return_url = "https://worldline.com"
+    hostedCheckoutSpecificInput.return_url = "https://createhostedcheckoutcallback-967097485204.europe-southwest1.run.app?res_code=1"
 
     createHostedCheckoutRequest.order = order
     createHostedCheckoutRequest.hosted_checkout_specific_input = hostedCheckoutSpecificInput
@@ -69,7 +69,7 @@ def main(request):
     # ...
 
     # Send the request to your PSPID on our platform and receive it via an instance of CreateHostedCheckoutResponse
-    createHostedCheckoutResponse: CreateHostedCheckoutResponse = client.merchant("Wordlline1").hosted_checkout().create_hosted_checkout(
+    createHostedCheckoutResponse: CreateHostedCheckoutResponse = client.merchant("Worldline349").hosted_checkout().create_hosted_checkout(
         createHostedCheckoutRequest)
 
     print(createHostedCheckoutResponse.redirect_url)
